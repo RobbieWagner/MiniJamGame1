@@ -5,7 +5,10 @@ public class IShopItem : MonoBehaviour
 
     [SerializeField] protected CurrencyMaker plant;
 
-    [SerializeField] protected int cost;
+    [SerializeField] protected float[] upgradeTiers;
+    [SerializeField] protected int[] costs;
+    protected int currentTier;
+
     [SerializeField] protected UnlockRequirement unlockRequirement;
     protected bool unlocked;
     [SerializeField] protected GameObject shopTile;
@@ -16,14 +19,17 @@ public class IShopItem : MonoBehaviour
     {
         unlocked = false;
         unlockRequirement.OnUnlock += UnlockItem;
+
+        currentTier = 0;
     }
 
     public virtual void BuyItem()
     {
-        if(GameStats.Instance.Currency >= cost)
+        if(GameStats.Instance.Currency >= costs[currentTier] && currentTier < costs.Length)
         {
-            GameStats.Instance.Currency -= cost;
-            shop.shopTiles.Remove(shopTile);
+            GameStats.Instance.Currency -= costs[currentTier];
+            currentTier++;
+            if(currentTier == costs.Length) shop.shopTiles.Remove(shopTile);
         }
     }
     public virtual void UnlockItem()
@@ -41,7 +47,7 @@ public class IShopItem : MonoBehaviour
 
     public virtual int GetCost()
     {
-        return cost;
+        return costs[currentTier];
     }
           
 }

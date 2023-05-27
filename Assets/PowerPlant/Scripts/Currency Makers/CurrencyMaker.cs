@@ -32,4 +32,7 @@ public class CurrencyMaker : MonoBehaviour
         // Add the incomeAmount to the player's currency in GameStats
         GameStats.Instance.EarnIncome(incomeAmount);
     }
+
+    public void ChangeIncomeSpeed(float newTimerThreshold) {timerThreshold = newTimerThreshold;}
+    public void ChangeIncomeAmount(int newIncomeAmount) {incomeAmount = newIncomeAmount;}
 }
