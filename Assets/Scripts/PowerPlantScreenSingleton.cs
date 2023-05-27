@@ -21,7 +21,7 @@ public class PowerPlantScreenSingleton : MonoBehaviour
         } 
     }
 
-    public void AddPlant(GameObject plant)
+    public CurrencyMaker AddPlant(GameObject plant)
     {
         CurrencyMaker currencyMaker = plant.GetComponent<CurrencyMaker>();
         if(currencyMaker != null)
@@ -30,6 +30,7 @@ public class PowerPlantScreenSingleton : MonoBehaviour
             RectTransform plantT = newPlant.GetComponent<RectTransform>();
             currencyMakerList.currencyMakers.Add(newPlant.GetComponent<CurrencyMaker>());
         }
+        return currencyMaker;
     }
 
     public void RemovePlant(int index)

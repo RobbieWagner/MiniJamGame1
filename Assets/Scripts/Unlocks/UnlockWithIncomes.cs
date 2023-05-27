@@ -10,10 +10,10 @@ public class UnlockWithIncomes : MonoBehaviour
 
     void Awake()
     {
-        GameStats.Instance.OnEarnedIncomesChange += FulfillUnlockrequirement;
+        GameStats.Instance.OnEarnedIncomesChange += FulfillUnlockRequirement;
     }
 
-    private void FulfillUnlockrequirement(int incomesEarned)
+    private void FulfillUnlockRequirement(int incomesEarned)
     {
         if(incomesEarned == incomeRequirement)unlockRequirement.Unlocked = true;
     }

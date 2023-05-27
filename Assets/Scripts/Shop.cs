@@ -18,9 +18,20 @@ public class Shop : MonoBehaviour
 
     [SerializeField] Canvas canvas;
 
+    bool shopDisplayed;
+
     private void Start() 
     {
-        if(canvas.enabled) DisplayShop();   
+        shopDisplayed = false;
+    }
+
+    private void Update()
+    {
+        if(!shopDisplayed)
+        {
+            shopDisplayed = true;
+            DisplayShop();
+        }
     }
 
     public void DisplayShop()

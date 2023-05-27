@@ -48,5 +48,10 @@ public class IShopItem : MonoBehaviour
     {
         return costs[currentTier];
     }
+
+    public virtual void SetPlant(CurrencyMaker newPlant)
+    {
+        plant = newPlant;
+    }
           
 }
