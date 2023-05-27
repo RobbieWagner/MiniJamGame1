@@ -1319,6 +1319,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Play
       objectReference: {fileID: 0}
+    - target: {fileID: 9077932317945163529, guid: c0cc831ee2d86a347b756a751d0651ec, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1480664798}
+    - target: {fileID: 9077932317945163529, guid: c0cc831ee2d86a347b756a751d0651ec, type: 3}
+      propertyPath: gameSceneName
+      value: Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077932317945163529, guid: c0cc831ee2d86a347b756a751d0651ec, type: 3}
+      propertyPath: loadingCanvas
+      value: 
+      objectReference: {fileID: 1480664798}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0cc831ee2d86a347b756a751d0651ec, type: 3}
 --- !u!224 &1738930530 stripped
