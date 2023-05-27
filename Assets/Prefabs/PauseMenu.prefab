@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 4986456345677866745}
   pauseMenuCanvas: {fileID: 4986456345677866740}
-  audioMixer: {fileID: 24100000, guid: 2f36e3408af994140a1809b82189beed, type: 2}
+  audioMixer: {fileID: 24100000, guid: 35a1da4050292104c91fec03dd49d25c, type: 2}
   levelMusicTracks: []
 --- !u!114 &4519868947327279643
 MonoBehaviour:
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: bb6a2403031baf14b9c068aeef445018, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 10c4b5a5f9b443844955824d53858768, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:

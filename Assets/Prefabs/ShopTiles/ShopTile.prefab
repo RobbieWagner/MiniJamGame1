@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 6546205094435582607}
   - component: {fileID: 9104086707250712934}
   - component: {fileID: 2311497935307937490}
+  - component: {fileID: 1239203771081912116}
   m_Layer: 5
   m_Name: ShopTile
   m_TagString: Untagged
@@ -361,3 +362,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1239203771081912116}
+        m_TargetAssemblyTypeName: MenuButtonSounds, Assembly-CSharp
+        m_MethodName: PlaySelectionSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1239203771081912116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743745080330039165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c617d7a37ef306b40ae709abe07eff78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

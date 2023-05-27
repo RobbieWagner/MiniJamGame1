@@ -12,12 +12,12 @@ public class GameStats : MonoBehaviour
         get {return currency;}
         set
         {
-            if(value == 0) return;
+            if(value == currency) return;
             currency = value;
             if(OnCurrencyChange != null) OnCurrencyChange(currency); 
         }
     }
-    private int currency;
+    [SerializeField] private int currency;
 
     public delegate void OnCurrencyChangeDelegate(int newValue);
     public event OnCurrencyChangeDelegate OnCurrencyChange;
@@ -40,7 +40,6 @@ public class GameStats : MonoBehaviour
 
     private void Awake() 
     { 
-        currency = 0;
         if (Instance != null && Instance != this) 
         { 
             Destroy(this); 

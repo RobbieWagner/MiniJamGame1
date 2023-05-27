@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5568113977916682371}
   - component: {fileID: 6241604763101710998}
   - component: {fileID: 1427351705088380902}
-  - component: {fileID: 1427351705088380901}
+  - component: {fileID: 8982510971159635715}
   m_Layer: 0
   m_Name: Oil
   m_TagString: Untagged
@@ -57,16 +57,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8f889af63a51941b33e3d96f6c1b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plant: {fileID: 1247168380966052145, guid: 9f8a1521faa019442b381ec08b8153ac, type: 3}
+  plant: {fileID: 1247168380966052145, guid: 6e877b145f7999849bb04a90368ee07e, type: 3}
   upgradeTiers:
   - 0
-  costs: 00000000
+  costs: 50c30000
   unlockRequirement: {fileID: 6241604763101710998}
-  shopTile: {fileID: 7743745080330039165, guid: e71a33bab046c53409ea7e2a2aade794, type: 3}
+  shopTile: {fileID: 7743745080330039165, guid: 82378aa5fece5094f956cd165ea2b8b0, type: 3}
   shop: {fileID: 0}
-  shopItemIcon: {fileID: 21300000, guid: 62ce01ddca719d34ea9648c586a7cc94, type: 3}
-  plantGO: {fileID: 1247168380966052147, guid: 9f8a1521faa019442b381ec08b8153ac, type: 3}
---- !u!114 &1427351705088380901
+  shopItemIcon: {fileID: 21300000, guid: ad72a4f092b9aec4db59ebd3b1e0fb19, type: 3}
+  plantGO: {fileID: 1247168380966052147, guid: 6e877b145f7999849bb04a90368ee07e, type: 3}
+--- !u!114 &8982510971159635715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,7 +75,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1427351705088380900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3afa1d1c6fefdb443bb835bf35165cb5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b2fc704e2edb9647a7320ed29513031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   unlockRequirement: {fileID: 6241604763101710998}
+  shopItem: {fileID: 1427351705088380902}
+  purchasePlant: {fileID: 0}

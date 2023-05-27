@@ -9,8 +9,17 @@ public class PowerPlantScreenSingleton : MonoBehaviour
 
     [SerializeField] CurrencyMakerList currencyMakerList;
 
+    float[,,] displayPosition;
+
     void Awake()
     {
+        displayPosition = new float[,,]   {{{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
+                                        {{-90,0},{90,0},{0,0},{0,0},{0,0},{0,0}},
+                                        {{-120,0},{0,0},{120,0},{0,0},{0,0},{0,0}},
+                                        {{-90,90},{90,90},{-90,-90},{90,-90},{0,0},{0,0}},
+                                        {{-90,90},{90,90},{-120,-90},{0,-90},{120,-90},{0,0}},
+                                        {{-120,90},{0,90},{120,90},{-120,-90},{0,-90},{120,-90}}};
+
         if (Instance != null && Instance != this) 
         { 
             Destroy(this); 
@@ -38,5 +47,17 @@ public class PowerPlantScreenSingleton : MonoBehaviour
         GameObject plant = currencyMakerList.currencyMakers[index].gameObject;
         Destroy(plant);
         currencyMakerList.currencyMakers.RemoveAt(index);
+    }
+
+    public void DisplayPlants()
+    {
+        List<CurrencyMaker> currencyMakers = currencyMakerList.currencyMakers;
+
+        int index = currencyMakers.Count - 1;
+
+        for(int i = 0; i < currencyMakers.Count; i++)
+        {
+            currencyMakers[i].transform.localPosition = new Vector2(displayPosition[index,i,0], displayPosition[index,i,1]);
+        }
     }
 }

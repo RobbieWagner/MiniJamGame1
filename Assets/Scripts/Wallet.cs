@@ -12,11 +12,11 @@ public class Wallet : MonoBehaviour
     void Awake()
     {
         GameStats.Instance.OnCurrencyChange += UpdateWalletText;
-        walletText.text = "Wallet: ...";
+        UpdateWalletText(GameStats.Instance.Currency);
     }
 
     private void UpdateWalletText(int walletAmount)
     {
-        walletText.text = "Wallet: " + walletAmount;
+        walletText.text = "Wallet: M$ " + walletAmount;
     }
 }

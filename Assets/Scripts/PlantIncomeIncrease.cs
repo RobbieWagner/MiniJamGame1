@@ -13,6 +13,7 @@ public class PlantIncomeIncrease : IShopItem
 
             currentTier++;
             if(currentTier == costs.Length) shop.shopTiles.Remove(shopTile);
+            shop.DisplayShop();
         }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5568113977916682371}
   - component: {fileID: 6241604763101710998}
   - component: {fileID: 1427351705088380902}
-  - component: {fileID: 1427351705088380901}
+  - component: {fileID: 2466505613008946300}
   m_Layer: 0
   m_Name: Solar
   m_TagString: Untagged
@@ -57,16 +57,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8f889af63a51941b33e3d96f6c1b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plant: {fileID: 1247168380966052145, guid: 9f8a1521faa019442b381ec08b8153ac, type: 3}
+  plant: {fileID: 1247168380966052145, guid: b1d95b5d95a51d74aa081a85058db4b2, type: 3}
   upgradeTiers:
   - 0
-  costs: 00000000
+  costs: 50c30000
   unlockRequirement: {fileID: 6241604763101710998}
-  shopTile: {fileID: 7743745080330039165, guid: e71a33bab046c53409ea7e2a2aade794, type: 3}
+  shopTile: {fileID: 7743745080330039165, guid: c79c35c1f777f0348ae3498f55d42416, type: 3}
   shop: {fileID: 0}
-  shopItemIcon: {fileID: 21300000, guid: 62ce01ddca719d34ea9648c586a7cc94, type: 3}
-  plantGO: {fileID: 1247168380966052147, guid: 9f8a1521faa019442b381ec08b8153ac, type: 3}
---- !u!114 &1427351705088380901
+  shopItemIcon: {fileID: 21300000, guid: 51d29639bc4d3cc499fc115f99c04d2c, type: 3}
+  plantGO: {fileID: 1247168380966052147, guid: b1d95b5d95a51d74aa081a85058db4b2, type: 3}
+--- !u!114 &2466505613008946300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,7 +75,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1427351705088380900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3afa1d1c6fefdb443bb835bf35165cb5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b2fc704e2edb9647a7320ed29513031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   unlockRequirement: {fileID: 6241604763101710998}
+  shopItem: {fileID: 1427351705088380902}
+  purchasePlant: {fileID: 0}

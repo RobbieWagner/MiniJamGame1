@@ -14,12 +14,16 @@ public class ShopTile : MonoBehaviour
     
     private void Awake()
     {
-        buttonText.text = "$" + shopItem.GetCost();
+        buttonText.text = "M$ " + shopItem.GetCost();
     }
 
     public void OnBuyItemButtonPress()
     {
         shopItem.BuyItem();
+    }
+
+    public void DisableButton()
+    {
         button.interactable = false;
     }
 }

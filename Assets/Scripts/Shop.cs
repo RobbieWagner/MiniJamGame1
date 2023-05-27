@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,6 +43,8 @@ public class Shop : MonoBehaviour
         }
         displayedShopTiles.Clear();
 
+        shopTiles.Distinct().ToList();
+
         float posX = minTilePositionX;
         float posY = maxTilePositionY;
 
@@ -52,7 +55,7 @@ public class Shop : MonoBehaviour
             if(shopTile != null)
             {
                 displayedShopTiles.Add(Instantiate(shopTileGO, this.transform));
-                RectTransform rect = shopTileGO.GetComponent<RectTransform>();
+                RectTransform rect = displayedShopTiles[displayedShopTiles.Count - 1].GetComponent<RectTransform>();
 
                 rect.anchoredPosition = new Vector2(posX, posY);
                 posX += distanceBetweenTilesX;
@@ -65,5 +68,12 @@ public class Shop : MonoBehaviour
                 //Debug.Log("X" + posX + " Y" + posY);
             }
         }
+    }
+
+    public void RemoveItem(GameObject item)
+    {
+        int index = shopTiles.IndexOf(item);
+        Destroy(displayedShopTiles[index]);
+        shopTiles.Remove(item);
     }
 }

@@ -28,7 +28,11 @@ public class IShopItem : MonoBehaviour
         {
             GameStats.Instance.Currency -= costs[currentTier];
             currentTier++;
-            if(currentTier == costs.Length) shop.shopTiles.Remove(shopTile);
+            if(currentTier == costs.Length) 
+            {
+                shop.RemoveItem(shopTile);
+            }
+            shop.DisplayShop();
         }
     }
     public virtual void UnlockItem()

@@ -22,8 +22,12 @@ public class PurchasePlant : IShopItem
             CurrencyMaker newCurrencyMaker = PowerPlantScreenSingleton.Instance.AddPlant(plantGO);
 
             currentTier++;
-            if(currentTier == costs.Length) shop.shopTiles.Remove(shopTile);
+            if(currentTier == costs.Length) 
+            {
+                shop.RemoveItem(shopTile);
+            }
             if(newCurrencyMaker != null) OnItemPurhcase(newCurrencyMaker);
+            shop.DisplayShop();
         }
     }
 
