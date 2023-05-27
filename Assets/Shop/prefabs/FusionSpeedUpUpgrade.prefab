@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1877797009041121436}
   - component: {fileID: 2515581872835996867}
+  - component: {fileID: 3110810354594030470}
+  - component: {fileID: 131745893851585161}
   m_Layer: 0
   m_Name: FusionSpeedUpUpgrade
   m_TagString: Untagged
@@ -45,5 +47,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plant: {fileID: 0}
   cost: 25
-  shopTile: {fileID: 0}
+  unlockRequirement: {fileID: 0}
+  shopTile: {fileID: 7743745080330039165, guid: dd1ed018877b8734a94f8b6c88b5ba3f, type: 3}
   shop: {fileID: 0}
+  shopItemIcon: {fileID: 21300000, guid: 5bd57fc35238aba468998e4514dbb25c, type: 3}
+--- !u!114 &3110810354594030470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4937164099456131067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68637c8e4960ee48817750738ca1a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  incomeRequirement: 5
+  unlockRequirement: {fileID: 0}
+--- !u!114 &131745893851585161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4937164099456131067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede4aa07991086745829b84c5c213ba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -340,7 +340,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopTiles: []
   displayedShopTiles: []
-  columns: 0
+  minTilePositionX: 0
+  maxTilePositionX: 0
+  minTilePositionY: 0
+  maxTilePositionY: 0
+  distanceBetweenTilesX: 150
+  distanceBetweenTilesY: 75
 --- !u!1001 &540062127492368868
 PrefabInstance:
   m_ObjectHideFlags: 0

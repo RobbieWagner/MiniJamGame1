@@ -6,21 +6,21 @@ using UnityEngine.UI;
 public class Popup : MonoBehaviour
 {
     [SerializeField] private Canvas popupCanvas;
-    [SerializeField] private int incomesToTrigger = 3;
+    [SerializeField] private UnlockRequirement unlockRequirement;
+    [SerializeField] private PopupDisplay popupDisplay;
 
     void Awake()
     {
         popupCanvas.enabled = false;
-        GameStats.Instance.OnEarnedIncomesChange += CheckForPopup;
+        unlockRequirement.OnUnlock += UnlockPopup;
     }
 
-    private void CheckForPopup(int earnedIncomes)
+    private void UnlockPopup()
     {
-        if(earnedIncomes == incomesToTrigger)
-        DisplayPopup();
+        if(!popupDisplay.popups.Contains(this)) popupDisplay.popups.Add(this);
     }
 
-    private void DisplayPopup()
+    public void DisplayPopup()
     {
         popupCanvas.enabled = true;
         Time.timeScale = 0f;

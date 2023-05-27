@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 4667560987356068607}
   - component: {fileID: 4667560987356068606}
   - component: {fileID: 4667560987356068605}
+  - component: {fileID: 7082266759280534438}
   m_Layer: 0
   m_Name: Popup
   m_TagString: Untagged
@@ -326,6 +327,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupCanvas: {fileID: 4667560987356068604}
   incomesToTrigger: 3
+  unlockRequirement: {fileID: 0}
+  popupDisplay: {fileID: 0}
+--- !u!114 &7082266759280534438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667560987356068592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede4aa07991086745829b84c5c213ba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4667560985512623624
 PrefabInstance:
   m_ObjectHideFlags: 0
