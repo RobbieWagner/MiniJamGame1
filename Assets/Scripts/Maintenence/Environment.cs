@@ -15,6 +15,7 @@ public class Environment : MonoBehaviour
     [SerializeField] TextMeshProUGUI costText;
 
     public Button button;
+    public Button finishGame;
 
     void Awake()
     {
@@ -25,11 +26,13 @@ public class Environment : MonoBehaviour
         aboveZero = true;
 
         costText.text = "Replenish(M$" + costOfReplenishment + ")";
+
+        finishGame.gameObject.SetActive(false);
     }
 
     private void Update() 
     {
-        if(!aboveZero) SceneManager.LoadScene("MainMenu");
+        if(!aboveZero) IdleGameManager.Instance.EndGame();
     }
 
     public void UpdateBar(float timeDifference, float environmentDeteriorationMultiplier)
@@ -40,16 +43,39 @@ public class Environment : MonoBehaviour
         aboveZero = false; 
     }
 
+    public void ChangeEnvironmentValue(float magnitude)
+    {
+        Debug.Log("hello");
+        slider.value += magnitude;
+
+        if(slider.value <= 0)
+        aboveZero = false;
+    }
+
     public void ReplenishBar()
     {
         if(GameStats.Instance.Currency >= costOfReplenishment)
         {
             GameStats.Instance.Currency -= costOfReplenishment;
-            slider.value += 10000;
+            slider.value += slider.maxValue/4;
             aboveZero = true;
 
-            costOfReplenishment *= 2;
-            costText.text = "Replenish(M$" + costOfReplenishment + ")";
+            if(costOfReplenishment * 2 < 2000000000) 
+            {
+                costOfReplenishment *= 2;
+                costText.text = "Replenish(M$" + costOfReplenishment + ")";
+            }
+            else
+            {
+                button.enabled = false;
+                costText.text = "";
+                finishGame.gameObject.SetActive(true);
+            }
         }
+    }
+
+    public void FinishGame()
+    {
+        IdleGameManager.Instance.EndGame(true);
     }
 }

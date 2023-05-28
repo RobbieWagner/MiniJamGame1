@@ -129,7 +129,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1247168380161837125
 GameObject:
@@ -241,7 +241,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1247168380327528597
 CanvasRenderer:
@@ -452,8 +452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3414a706854b4445ad2693939e22d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerThreshold: 5.5
-  incomeAmount: 22
+  timerThreshold: 6
+  incomeAmount: 20
   currencyMakerUI: {fileID: 1247168381012352866}
 --- !u!1 &1247168381012352876
 GameObject:

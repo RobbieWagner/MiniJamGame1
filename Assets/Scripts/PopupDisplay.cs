@@ -20,10 +20,9 @@ public class PopupDisplay : MonoBehaviour
         negativePopupChance = 50f;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ReduceNegativePopupChance(float difference)
     {
-        
+        negativePopupChance -= difference;
     }
 
     private void RollForPopup(int incomesEarned)

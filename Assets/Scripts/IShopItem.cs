@@ -35,6 +35,7 @@ public class IShopItem : MonoBehaviour
             shop.DisplayShop();
         }
     }
+    
     public virtual void UnlockItem()
     {
         unlocked = true;

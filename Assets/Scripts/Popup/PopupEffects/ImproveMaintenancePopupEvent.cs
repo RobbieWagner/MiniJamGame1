@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeMaintenancePopupEvent : PopupEffect
+public class ImproveMaintenancePopupEvent : PopupEffect
 {
     [SerializeField] float changeMagnitude;
     [SerializeField] Maintenance maintenance;

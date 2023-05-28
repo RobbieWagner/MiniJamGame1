@@ -20,6 +20,11 @@ public class CurrencyMakerUI : MonoBehaviour
         timerProgress.value = timer;
     }
 
+    public void ChangeTimerThreshold(float timerThreshold)
+    {
+        timerProgress.maxValue = timerThreshold;
+    }
+
     // Update is called once per frame
     void Update()
     {

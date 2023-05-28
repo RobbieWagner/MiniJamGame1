@@ -21,9 +21,9 @@ public class Maintenance : MonoBehaviour
         aboveZero = true;
     }
 
-    public void UpdateBar(float timeDifference)
+    public void UpdateBar(float timeDifference, float mulitplier)
     {
-        slider.value -=timeDifference;
+        slider.value -=timeDifference * mulitplier;
 
         if(slider.value <= 0)
         aboveZero = false; 
@@ -37,7 +37,10 @@ public class Maintenance : MonoBehaviour
 
     public void IncreaseThreshold(float amount)
     {
-        slider.maxValue += amount;
-        slider.value += amount;
+        if(slider.maxValue - amount >= 30)
+        {
+            slider.maxValue += amount;
+            slider.value += amount;
+        }
     }
 }

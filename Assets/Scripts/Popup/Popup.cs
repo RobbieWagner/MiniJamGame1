@@ -11,7 +11,7 @@ public class Popup : MonoBehaviour
 
     [SerializeField] bool positivePopup;
 
-    [SerializeField] PopupEffect popupEffect;
+    [SerializeField] PopupEffect[] popupEffects;
 
     void Awake()
     {
@@ -35,6 +35,6 @@ public class Popup : MonoBehaviour
     {
         popupCanvas.enabled = false;
         Time.timeScale = 1f;
-        popupEffect.ExecutePopupEffect();
+        foreach(PopupEffect popupEffect in popupEffects) popupEffect.ExecutePopupEffect();
     }
 }

@@ -8,12 +8,14 @@ public class GameStats : MonoBehaviour
     public static GameStats Instance {get; private set;}
 
     public float environmentDeteriorationMultiplier = 1f;
+    public float maintenanceMultiplier = 1f;
     public int Currency
     {
         get {return currency;}
         set
         {
             if(value == currency) return;
+            if(value > 2000000000) value = 2000000000;
             currency = value;
             if(OnCurrencyChange != null) OnCurrencyChange(currency); 
         }
@@ -63,8 +65,20 @@ public class GameStats : MonoBehaviour
         Currency += incomeAmount;
     }
 
+    public void MultiplyMoney(float multiplier)
+    {
+        float money = (float) Currency;
+        money *= multiplier;
+        Currency = (int) money;
+    }
+
     public void CombineEnvironmentalMultiplier(float multiplier)
     {
         environmentDeteriorationMultiplier *= multiplier;
+    }
+
+    public void CombineMaintenanceMultiplier(float multiplier)
+    {
+        maintenanceMultiplier *= multiplier;
     }
 }

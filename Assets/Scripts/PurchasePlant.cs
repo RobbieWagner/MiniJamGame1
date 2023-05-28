@@ -10,6 +10,7 @@ public class PurchasePlant : IShopItem
     List<UnlockByPurchase> purchaseUnlocks;
 
     [SerializeField] float environmentDeteriorationMultiplier;
+    [SerializeField] float maintenanceMultiplier = 1f;
 
     protected override void Start()
     {
@@ -32,6 +33,7 @@ public class PurchasePlant : IShopItem
             shop.DisplayShop();
 
             GameStats.Instance.CombineEnvironmentalMultiplier(environmentDeteriorationMultiplier);
+            GameStats.Instance.CombineMaintenanceMultiplier(maintenanceMultiplier);
         }
     }
 

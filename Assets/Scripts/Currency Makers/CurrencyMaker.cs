@@ -32,6 +32,10 @@ public class CurrencyMaker : MonoBehaviour
         GameStats.Instance.EarnIncome(incomeAmount);
     }
 
-    public void ChangeIncomeSpeed(float newTimerThreshold) {timerThreshold = newTimerThreshold;}
+    public void ChangeIncomeSpeed(float newTimerThreshold) 
+    {
+        timerThreshold = newTimerThreshold;
+        currencyMakerUI.ChangeTimerThreshold(timerThreshold);
+    }
     public void ChangeIncomeAmount(int newIncomeAmount) {incomeAmount = newIncomeAmount;}
 }

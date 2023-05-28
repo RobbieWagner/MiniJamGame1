@@ -15,10 +15,10 @@ public class PowerPlantScreenSingleton : MonoBehaviour
     {
         displayPosition = new float[,,]   {{{0,0},{0,0},{0,0},{0,0},{0,0},{0,0}},
                                         {{-90,0},{90,0},{0,0},{0,0},{0,0},{0,0}},
-                                        {{-120,0},{0,0},{120,0},{0,0},{0,0},{0,0}},
-                                        {{-90,90},{90,90},{-90,-90},{90,-90},{0,0},{0,0}},
-                                        {{-90,90},{90,90},{-120,-90},{0,-90},{120,-90},{0,0}},
-                                        {{-120,90},{0,90},{120,90},{-120,-90},{0,-90},{120,-90}}};
+                                        {{-140,0},{0,0},{140,0},{0,0},{0,0},{0,0}},
+                                        {{-90,50},{90,50},{-90,-45},{90,-45},{0,0},{0,0}},
+                                        {{-90,50},{90,50},{-140,-45},{0,-45},{140,-45},{0,0}},
+                                        {{-140,50},{0,50},{140,50},{-140,-45},{0,-45},{140,-45}}};
 
         if (Instance != null && Instance != this) 
         { 
@@ -38,8 +38,10 @@ public class PowerPlantScreenSingleton : MonoBehaviour
             GameObject newPlant = Instantiate(plant, this.transform);
             RectTransform plantT = newPlant.GetComponent<RectTransform>();
             currencyMakerList.currencyMakers.Add(newPlant.GetComponent<CurrencyMaker>());
+            return newPlant.GetComponent<CurrencyMaker>();
         }
-        return currencyMaker;
+
+        else return null;
     }
 
     public void RemovePlant(int index)

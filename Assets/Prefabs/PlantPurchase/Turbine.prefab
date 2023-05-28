@@ -66,7 +66,8 @@ MonoBehaviour:
   shop: {fileID: 0}
   shopItemIcon: {fileID: 21300000, guid: ca8fe416ff2e88245b2182a58e69b640, type: 3}
   plantGO: {fileID: 1247168380966052147, guid: e5345a038b64eff4595f4bfa87655e46, type: 3}
-  environmentDeteriorationMultiplier: 1.2
+  environmentDeteriorationMultiplier: 1.6
+  maintenanceMultiplier: 1.5
 --- !u!114 &1427351705088380901
 MonoBehaviour:
   m_ObjectHideFlags: 0

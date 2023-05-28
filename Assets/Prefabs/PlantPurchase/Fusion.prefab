@@ -64,9 +64,10 @@ MonoBehaviour:
   unlockRequirement: {fileID: 6241604763101710998}
   shopTile: {fileID: 7743745080330039165, guid: 97ebc7d038a62f54abdc535435630a80, type: 3}
   shop: {fileID: 0}
-  shopItemIcon: {fileID: 21300000, guid: 62ce01ddca719d34ea9648c586a7cc94, type: 3}
+  shopItemIcon: {fileID: 21300000, guid: cdb34d4ec5f39404187b27510daac695, type: 3}
   plantGO: {fileID: 1247168380966052147, guid: 9f8a1521faa019442b381ec08b8153ac, type: 3}
   environmentDeteriorationMultiplier: 1.01
+  maintenanceMultiplier: 1.01
 --- !u!114 &791635839862389545
 MonoBehaviour:
   m_ObjectHideFlags: 0

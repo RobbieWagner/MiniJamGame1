@@ -15,7 +15,7 @@ public class UnlockByPurchase : MonoBehaviour
 
     private void FulfillUnlockRequirement(CurrencyMaker currencyMaker)
     {
-        if(currencyMaker != null) shopItem.SetPlant(currencyMaker);
+        if(currencyMaker != null && shopItem != null) shopItem.SetPlant(currencyMaker);
         unlockRequirement.Unlocked = true;
     }
 }

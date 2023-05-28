@@ -8,6 +8,7 @@ public class Shop : MonoBehaviour
 {
     public List<GameObject> shopTiles;
     public List<GameObject> displayedShopTiles;
+    private List<GameObject> purchasedShopTiles;
 
     [SerializeField] private float minTilePositionX;
     [SerializeField] private float maxTilePositionX;
@@ -24,6 +25,7 @@ public class Shop : MonoBehaviour
     private void Start() 
     {
         shopDisplayed = false;
+        purchasedShopTiles = new List<GameObject>();
     }
 
     private void Update()
@@ -48,11 +50,29 @@ public class Shop : MonoBehaviour
         float posX = minTilePositionX;
         float posY = maxTilePositionY;
 
-        foreach(GameObject shopTileGO in shopTiles)
+        for(int j = 0; j < shopTiles.Count; j++)
         {
+            GameObject shopTileGO = shopTiles[j];
             ShopTile shopTile = shopTileGO.GetComponent<ShopTile>();
 
-            if(shopTile != null)
+            bool shopTileThere = false;
+            for(int i = 0; i < displayedShopTiles.Count; i++)
+            {
+                ShopTile displayShopTile = displayedShopTiles[i].GetComponent<ShopTile>();
+
+                if(displayShopTile.shopItemIcon.sprite == shopTile.shopItemIcon.sprite) shopTileThere = true;
+            }
+            if(purchasedShopTiles != null)
+            {
+                for(int i = 0; i < purchasedShopTiles.Count; i++)
+                {
+                    ShopTile purchasedTile = purchasedShopTiles[i].GetComponent<ShopTile>();
+
+                    if(purchasedTile.shopItemIcon.sprite == shopTile.shopItemIcon.sprite) shopTileThere = true;
+                }
+            }
+
+            if(shopTile != null && !shopTileThere)
             {
                 displayedShopTiles.Add(Instantiate(shopTileGO, this.transform));
                 RectTransform rect = displayedShopTiles[displayedShopTiles.Count - 1].GetComponent<RectTransform>();
@@ -67,13 +87,22 @@ public class Shop : MonoBehaviour
 
                 //Debug.Log("X" + posX + " Y" + posY);
             }
+            else if(shopTile != null && shopTileThere)
+            {
+                shopTiles.RemoveAt(j);
+            }
         }
     }
 
     public void RemoveItem(GameObject item)
     {
         int index = shopTiles.IndexOf(item);
-        Destroy(displayedShopTiles[index]);
-        shopTiles.Remove(item);
+
+        if(index < shopTiles.Count)
+        {
+            purchasedShopTiles.Add(shopTiles[index]);
+            Destroy(displayedShopTiles[index]);
+            shopTiles.Remove(item);
+        }
     }
 }

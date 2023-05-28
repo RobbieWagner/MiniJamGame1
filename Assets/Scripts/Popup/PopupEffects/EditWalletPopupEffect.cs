@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EditWalletPopupEffect : PopupEffect
 {
-    [SerializeField] int moneyEarned;
+    [SerializeField] float moneyMultiplier;
 
     public override void ExecutePopupEffect()
     {
-        GameStats.Instance.Currency += moneyEarned;
+        GameStats.Instance.MultiplyMoney(moneyMultiplier);
     }
 }
