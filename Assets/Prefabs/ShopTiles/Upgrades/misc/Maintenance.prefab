@@ -306,6 +306,8 @@ MonoBehaviour:
   button: {fileID: 2311497935307937490}
   buttonText: {fileID: 893543203757332219}
   shopItemIcon: {fileID: 6180612019139715932}
+  informationText: {fileID: 0}
+  purchaseInfo: Decreases the rate of resource depletion
 --- !u!114 &2311497935307937490
 MonoBehaviour:
   m_ObjectHideFlags: 0

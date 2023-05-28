@@ -45,7 +45,6 @@ public class Environment : MonoBehaviour
 
     public void ChangeEnvironmentValue(float magnitude)
     {
-        Debug.Log("hello");
         slider.value += magnitude;
 
         if(slider.value <= 0)

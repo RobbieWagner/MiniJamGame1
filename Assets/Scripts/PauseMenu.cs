@@ -19,6 +19,8 @@ public class PauseMenu : MonoBehaviour
 
     bool musicWasPlaying;
 
+    bool timeWasOn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenuCanvas.enabled = false;
 
         musicWasPlaying = false;
+
+        timeWasOn = true;
     }
 
     public void OnPause()
@@ -37,6 +41,7 @@ public class PauseMenu : MonoBehaviour
 
             if(paused) 
             {
+                if(Time.timeScale != 0) timeWasOn = true;
                 Time.timeScale = 0;
                 pauseMenuCanvas.enabled = true;
                 
@@ -54,7 +59,7 @@ public class PauseMenu : MonoBehaviour
             }
             else 
             {
-                Time.timeScale = 1f;
+                if(timeWasOn) Time.timeScale = 1f;
                 pauseMenuCanvas.enabled = false;
                 AudioListener.pause = false;
 

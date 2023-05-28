@@ -9,7 +9,6 @@ public class EnvironmentChangePopupEffect : PopupEffect
 
     public override void ExecutePopupEffect()
     {
-        Debug.Log("hi");
         environment.ChangeEnvironmentValue(changeMagnitude);
     }
 }

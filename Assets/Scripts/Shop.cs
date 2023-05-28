@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Shop : MonoBehaviour
 {
     public List<GameObject> shopTiles;
     public List<GameObject> displayedShopTiles;
     private List<GameObject> purchasedShopTiles;
+
+    public TextMeshProUGUI informationText;
 
     [SerializeField] private float minTilePositionX;
     [SerializeField] private float maxTilePositionX;
@@ -60,7 +63,10 @@ public class Shop : MonoBehaviour
             {
                 ShopTile displayShopTile = displayedShopTiles[i].GetComponent<ShopTile>();
 
-                if(displayShopTile.shopItemIcon.sprite == shopTile.shopItemIcon.sprite) shopTileThere = true;
+                if(displayShopTile.shopItemIcon.sprite == shopTile.shopItemIcon.sprite) 
+                {
+                    shopTileThere = true;
+                }
             }
             if(purchasedShopTiles != null)
             {
@@ -90,7 +96,15 @@ public class Shop : MonoBehaviour
             else if(shopTile != null && shopTileThere)
             {
                 shopTiles.RemoveAt(j);
+                j--;
             }
+        }
+
+        for(int i = 0; i < displayedShopTiles.Count; i++)
+        {
+            ShopTile shopTile = displayedShopTiles[i].GetComponent<ShopTile>();
+
+            if(informationText != null) shopTile.informationText = informationText;
         }
     }
 
