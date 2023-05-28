@@ -9,6 +9,8 @@ public class PurchasePlant : IShopItem
 
     List<UnlockByPurchase> purchaseUnlocks;
 
+    [SerializeField] float environmentDeteriorationMultiplier;
+
     protected override void Start()
     {
         base.Start();
@@ -28,6 +30,8 @@ public class PurchasePlant : IShopItem
             }
             if(newCurrencyMaker != null) OnItemPurhcase(newCurrencyMaker);
             shop.DisplayShop();
+
+            GameStats.Instance.CombineEnvironmentalMultiplier(environmentDeteriorationMultiplier);
         }
     }
 

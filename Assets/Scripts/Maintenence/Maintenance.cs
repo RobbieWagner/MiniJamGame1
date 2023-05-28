@@ -7,10 +7,10 @@ public class Maintenance : MonoBehaviour
 {
     
     [SerializeField] private float timerThreshold = 30f;
-
     [SerializeField] Slider slider;
-
     [HideInInspector] public bool aboveZero;
+
+    public Button button;
 
     void Awake()
     {

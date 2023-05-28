@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class GameStats : MonoBehaviour
 {
-
     public static GameStats Instance {get; private set;}
+
+    public float environmentDeteriorationMultiplier = 1f;
     public int Currency
     {
         get {return currency;}
@@ -60,5 +61,10 @@ public class GameStats : MonoBehaviour
     private void UpdateCurrency(int incomeAmount)
     {
         Currency += incomeAmount;
+    }
+
+    public void CombineEnvironmentalMultiplier(float multiplier)
+    {
+        environmentDeteriorationMultiplier *= multiplier;
     }
 }
