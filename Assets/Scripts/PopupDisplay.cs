@@ -5,14 +5,19 @@ using UnityEngine;
 public class PopupDisplay : MonoBehaviour
 {
 
-    public List<Popup> popups;
+    public List<Popup> positivePopups;
+    public List<Popup> negativePopups;
     [SerializeField] private CurrencyMakerList currencyMakerList;
     [SerializeField] private float percentChanceOfPopup;
+
+    float negativePopupChance;
 
     // Start is called before the first frame update
     void Start()
     {
         GameStats.Instance.OnEarnedIncomesChange += RollForPopup;
+
+        negativePopupChance = 50f;
     }
 
     // Update is called once per frame
@@ -26,13 +31,25 @@ public class PopupDisplay : MonoBehaviour
         if(incomesEarned % currencyMakerList.currencyMakers.Count == 0)
         {
             bool displayAPopup = UnityEngine.Random.Range(0, 100) < percentChanceOfPopup;
-            if(displayAPopup && popups.Count > 0)
+            if(displayAPopup)
             {
-                int indexOfPopupToUse = (int) UnityEngine.Random.Range(0, popups.Count);
-                Popup popupToUse = popups[indexOfPopupToUse];
+                bool positivePopup = UnityEngine.Random.Range(0, 100) > negativePopupChance;
+                if(positivePopup && positivePopups.Count > 0)
+                {
+                    int indexOfPopupToUse = (int) UnityEngine.Random.Range(0, positivePopups.Count);
+                    Popup popupToUse = positivePopups[indexOfPopupToUse];
 
-                popupToUse.DisplayPopup();
-                popups.Remove(popupToUse);
+                    popupToUse.DisplayPopup();
+                    positivePopups.Remove(popupToUse);
+                }
+                else if(!positivePopup && negativePopups.Count > 0)
+                {
+                    int indexOfPopupToUse = (int) UnityEngine.Random.Range(0, negativePopups.Count);
+                    Popup popupToUse = negativePopups[indexOfPopupToUse];
+
+                    popupToUse.DisplayPopup();
+                    negativePopups.Remove(popupToUse);
+                }
             }
         }
     }

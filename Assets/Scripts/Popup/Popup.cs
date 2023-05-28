@@ -9,6 +9,10 @@ public class Popup : MonoBehaviour
     [SerializeField] private UnlockRequirement unlockRequirement;
     [SerializeField] private PopupDisplay popupDisplay;
 
+    [SerializeField] bool positivePopup;
+
+    [SerializeField] PopupEffect popupEffect;
+
     void Awake()
     {
         popupCanvas.enabled = false;
@@ -17,7 +21,8 @@ public class Popup : MonoBehaviour
 
     private void UnlockPopup()
     {
-        if(!popupDisplay.popups.Contains(this)) popupDisplay.popups.Add(this);
+        if(positivePopup && !popupDisplay.positivePopups.Contains(this)) popupDisplay.positivePopups.Add(this);
+        else if(!positivePopup && !popupDisplay.negativePopups.Contains(this)) popupDisplay.negativePopups.Add(this);
     }
 
     public void DisplayPopup()
@@ -30,5 +35,6 @@ public class Popup : MonoBehaviour
     {
         popupCanvas.enabled = false;
         Time.timeScale = 1f;
+        popupEffect.ExecutePopupEffect();
     }
 }

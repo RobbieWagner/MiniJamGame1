@@ -5,27 +5,22 @@ using UnityEngine;
 public class IdleGameManager : MonoBehaviour
 {
     [SerializeField] private CurrencyMakerList currencyMakerList;
+    [SerializeField] private Maintenance maintenance;
 
     private void Start()
     {
-        // Initialize the game
-        InitializeGame();
+        
     }
 
     private void Update()
     {
-        // Update the currency makers
-        foreach(CurrencyMaker currencyMaker in currencyMakerList.currencyMakers)
+        if(maintenance.aboveZero)
         {
-            currencyMaker.UpdateCurrencyMaker(Time.deltaTime);
+            foreach(CurrencyMaker currencyMaker in currencyMakerList.currencyMakers)
+            {
+                currencyMaker.UpdateCurrencyMaker(Time.deltaTime);
+            }
+            maintenance.UpdateBar(Time.deltaTime);
         }
-
-        // update other things as necessary
     }
-
-    private void InitializeGame()
-    {
-        // Set up the store, load player's currency, etc.s
-    }
-
 }

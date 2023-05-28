@@ -276,7 +276,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'SOLAR PANELS
 
-    <color=green>+reputation</color> <color=green>+efficient</color>
+    <color=green>+environment</color> <color=green>+efficient</color>
 
     <color=red>-speed</color>
     <color=red>-upgrades</color>'

@@ -276,7 +276,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'FUSION REACTOR
 
-    <color=purple>*reputation</color> <color=green>+efficiency
+    <color=blue>*environment</color> <color=green>+efficiency
 
     +speed
     +upgrades</color>'

@@ -29,7 +29,6 @@ public class CurrencyMaker : MonoBehaviour
 
     private void EarnIncome()
     {
-        // Add the incomeAmount to the player's currency in GameStats
         GameStats.Instance.EarnIncome(incomeAmount);
     }
 

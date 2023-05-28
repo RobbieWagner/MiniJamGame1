@@ -278,7 +278,7 @@ MonoBehaviour:
 
     <color=green>+speed</color> <color=green>+upgrades</color>
 
-    <color=red>-reputation</color>
+    <color=red>-environment</color>
     <color=red>-efficiency</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fc956f71d298b3446829865b2bfba72b, type: 2}
