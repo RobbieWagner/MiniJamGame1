@@ -9766,11 +9766,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7908488411956391760, guid: 8ff9cb3f87910394085b5519e275bef9, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7908488411956391763, guid: 8ff9cb3f87910394085b5519e275bef9, type: 3}
       propertyPath: m_Name
       value: Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908488411956391763, guid: 8ff9cb3f87910394085b5519e275bef9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7908488412392602223, guid: 8ff9cb3f87910394085b5519e275bef9, type: 3}
       propertyPath: m_fontAsset
@@ -17200,7 +17204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4859719714922833998, guid: c577e97c5f296c441b9a9abd5b951938, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4859719714922833999, guid: c577e97c5f296c441b9a9abd5b951938, type: 3}
       propertyPath: m_Pivot.x

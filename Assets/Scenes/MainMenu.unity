@@ -2380,10 +2380,8 @@ PrefabInstance:
 
         Silver Font - Poppy Works
 
-        Original
-        Sound Effects - Soundjay
-
-        Music - Robbie Wagner'
+        Music
+        - Robbie Wagner'
       objectReference: {fileID: 0}
     - target: {fileID: 8838942159132864958, guid: 7dfb595f80264fb4aa6efdbdc3860a7a, type: 3}
       propertyPath: m_fontAsset
